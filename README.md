@@ -7,7 +7,5 @@ Sou um texto longo com formatação de parágrafo
 - Elemento lista
 - Elemento lista
 
-1. Primeiro Passo
-2. Segundo Passo
 
 *Exemplo de tecnologias aplicadas ao projeto*  em uma frase de destaque
