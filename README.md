@@ -1,11 +1,15 @@
 # Káthia Rocha
 
-Sou um texto longo com formatação de parágrafo
 
-## Sou um subtítulo
+##  Top 3 das linguagens preferidas
 
-- Elemento lista
-- Elemento lista
+- JavaScript
+- Python
+- C++
+
+1. JavaScript
+2. Python
+3. C++
 
 
 *Exemplo de tecnologias aplicadas ao projeto*  em uma frase de destaque
