@@ -1,14 +1,18 @@
 import mysql.connector
+import mysql
 
-conexao = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database="loja",
-)
+def conectarBd():
+    conexao = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="loja",
+    )
 
-cursor = conexao.cursor()
-print("Conexão como o banco de dados feita com sucesso! \n")
+    cursor = conexao.cursor()
+    print("Conexão como o banco de dados feita com sucesso! \n")
+
+    return conexao,cursor
 
 
 # funcao inserir
@@ -17,6 +21,7 @@ def cadastrar(nome: str, preco: float, id: str, img: str):
     Utilizar formatos encurtados com quantidade de caracteres inferiores a 100
     Você poderá usar o https://www.encurtarlink.com/ para ajustar ao formato adequado'''
 
+    conexao, cursor = conectarBd()
     comando_sql = f"insert into produtos (nome, preco, id, imagem) value ('{nome}', {preco},'{id}','{img}')"
 
     cursor.execute(comando_sql)
@@ -26,6 +31,7 @@ def cadastrar(nome: str, preco: float, id: str, img: str):
 
 # funcao selecionar
 def selecionarTodosProdutos():
+    conexao, cursor = conectarBd()
     comando_sql = f'select id, nome, preco from produtos'
     cursor.execute(comando_sql)
     resultado_consulta = cursor.fetchall()
@@ -34,6 +40,7 @@ def selecionarTodosProdutos():
 
 # funcao atualizar
 def atualizarPreco(id: str, novo_valor: float):
+    conexao, cursor = conectarBd()
     comando_sql = f' UPDATE produtos SET preco = {novo_valor} WHERE id = "{id}"'
     cursor.execute(comando_sql)
     conexao.commit()
@@ -41,6 +48,7 @@ def atualizarPreco(id: str, novo_valor: float):
 
 # funcao deletar
 def deletarProduto(id: str):
+    conexao, cursor = conectarBd()
     comando_sql = f'DELETE FROM produtos WHERE id = "{id}"'
     cursor.execute(comando_sql)
     conexao.commit()

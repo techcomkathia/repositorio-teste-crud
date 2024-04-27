@@ -1,27 +1,24 @@
 import streamlit as st
 
-st.title('Meu título')
-st.write('Olá mundão!')
+from funcoesCrud import  cadastrar
 
-escolha = st.selectbox('Selecione o turno de interesse',
-                       ['Manha', 'tarde', 'noite'])
 
-# textos renderizados
 
-if escolha:
-    st.write(escolha)
+st.title('Sistema Dieguinho Alimentos - ME')
+st.markdown('## Cadastro de Produtos')
 
-radio= st.radio('Selecione uma opção', ['Manha', 'tarde', 'noite'])
+nome = st.text_input('Nome do produto', placeholder='Nome do produto com no máximo 50 caracteres')
 
-texto = st.text_input('Digite seu nome')
-numero = st.number_input('Digite um numero')
-if texto and numero:
-    st.write(texto, numero)
+imagem = st.text_input('Imagem do produto', placeholder='Url da imagem do produto com até 100 caracteres')
 
-cpf = st.text_input("Digite seu CPF", placeholder="000.000.000-00")
+codigo = st.text_input('Código do produto', placeholder='Código do produto')
 
-btnCadastrar = st.button('Cadastrar')
+preco = float(st.number_input('Preço produto'))
 
-st.write(btnCadastrar)
+btnCadastrarProduto = st.button('Cadastrar Produto')
 
-textolongo = st.text_area('Digite sua reclamação')
+if btnCadastrarProduto:
+    cadastrar(nome, preco, codigo, imagem)
+    st.write('Produto cadastrado com sucesso')
+
+
