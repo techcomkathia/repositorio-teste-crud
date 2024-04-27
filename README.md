@@ -1,19 +1,11 @@
-# Káthia Rocha
+# CRUD MYSQL 
+
+Esse projeto foi construído ao final do módulo de Python do curso de Desenvolvimento Full Stack Python da Youth Space. Com o objetivo de expolorar os conceitos apendidos sobre Python, linguagem SQL (Banco de dados MySQL) e interfaces gráficas (Stream lit).
 
 
-##  Top 3 das linguagens preferidas
+##  Como utilizar o projeto:
+- Python 3.12.1
+- MySQL 8.0
+- MySQL connector 8.3.0
+- Streamlit
 
-- JavaScript
-- Python
-- C++
-
-1. JavaScript
-2. Python
-3. C++
-
-## Meu espírito animal
-
-!['texto alternativo']( https://down-br.img.susercontent.com/file/f5495e1eed2434757f6a8ca305b835e6)
-
-
-*Exemplo de tecnologias aplicadas ao projeto*  em uma frase de destaque
