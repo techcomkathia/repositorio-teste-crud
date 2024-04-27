@@ -25,9 +25,9 @@ def cadastrar(nome: str, preco: float, id: str, img: str):
     comando_sql = f"insert into produtos (nome, preco, id, imagem) value ('{nome}', {preco},'{id}','{img}')"
 
     cursor.execute(comando_sql)
-    conexao.commit()  # aqui é onde vamos inserir os dados
+    conexao.commit() # aqui é onde vamos inserir os dados
     print("Produto cadastrado com sucesso!")
-
+    conexao.close()
 
 # funcao selecionar
 def selecionarTodosProdutos():
