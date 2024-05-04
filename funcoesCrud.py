@@ -37,6 +37,13 @@ def selecionarTodosProdutos():
     resultado_consulta = cursor.fetchall()
     return resultado_consulta
 
+def selecionarUmProduto(id):
+    conexao, cursor = conectarBd()
+    comando_sql = f'select id, nome, preco, imagem from produtos where id = "{id}"'
+    cursor.execute(comando_sql)
+    resultado_consulta = cursor.fetchall()
+    return resultado_consulta
+
 
 # funcao atualizar
 def atualizarPreco(id: str, novo_valor: float):

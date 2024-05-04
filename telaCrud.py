@@ -1,6 +1,8 @@
 import streamlit as st
+import pandas as pd
 
-from funcoesCrud import  cadastrar
+from funcoesCrud import *
+
 # cadastro
 st.title('Sistema Dieguinho Alimentos - ME')
 
@@ -28,8 +30,19 @@ with containerAlterar:
     novaImagem = st.text_input('Nova Imagem produto')
     st.button('Alterar produto')
 
+containerListar = st.expander('Todos os produtos')
 
-st.markdown("## Alterar produto")
-nomeAlterar = st.text_input('Novo nome produto', placeholder='Digite o nome do produto para alteração')
 
+with containerListar:
+    listaProdutos = selecionarTodosProdutos()
+    st.title('Todos os produtos')
+    tabelaPodutos = pd.DataFrame(listaProdutos, columns=('id', 'nome', 'preço'))
+    st.write(tabelaPodutos)
+
+col3, col4 = st.columns(2)
+containerUmProduto = col3.container(border=True)
+
+with containerUmProduto:
+    containerUmProduto.markdown('## Listar um produto')
+    codigoDoProduto = st.text_input('Codigo do produto a ser listado')
 
