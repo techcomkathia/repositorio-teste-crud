@@ -8,4 +8,5 @@ Esse projeto foi construído ao final do módulo de Python do curso de Desenvolv
 - MySQL 8.0
 - MySQL connector 8.3.0
 - Streamlit
+- Pandas
 
