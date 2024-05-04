@@ -45,4 +45,11 @@ containerUmProduto = col3.container(border=True)
 with containerUmProduto:
     containerUmProduto.markdown('## Listar um produto')
     codigoDoProduto = st.text_input('Codigo do produto a ser listado')
+    btnProcurarProduto = st.button('Procurar produtro')
 
+    if btnProcurarProduto:
+        produtoSelecionado = selecionarUmProduto(codigoDoProduto)
+
+        if produtoSelecionado:
+            st.write(produtoSelecionado)
+            st.image(produtoSelecionado[3])

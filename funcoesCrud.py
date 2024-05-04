@@ -41,7 +41,7 @@ def selecionarUmProduto(id):
     conexao, cursor = conectarBd()
     comando_sql = f'select id, nome, preco, imagem from produtos where id = "{id}"'
     cursor.execute(comando_sql)
-    resultado_consulta = cursor.fetchall()
+    resultado_consulta = cursor.fetchone()
     return resultado_consulta
 
 
